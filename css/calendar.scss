@@ -1,0 +1,141 @@
+@import "commons";
+
+// Toolbar
+.rbc-toolbar button.rbc-active {
+    background: $primary_color;
+    border-color: $primary_color;
+    color: #fff;
+    font-weight: 700;
+    cursor: default;
+
+    &:hover, &:focus {
+        background: $primary_hover_color;
+        border-color: $primary_hover_color;
+        color: #fff;
+    }
+}
+
+.rbc-toolbar button {
+    padding: 10px 1rem;
+    background: #e0e1e3;
+    border-color: #e0e1e3;
+    color: #666667;
+    cursor: pointer;
+    outline: none;
+    transition: .1s all ease-out;
+
+    &:hover, &:focus {
+        background: $grey_hover_color;
+        border-color: $grey_hover_color;
+        box-shadow: none;
+        transition: .1s all ease-out;
+    }
+
+    &:active:focus {
+        background-color: $grey_active_color;
+        border-color: $grey_active_color;
+        transition: .1s all ease-out;
+    }
+}
+
+// Header - month
+.rbc-month-view {
+    background: #fff;
+    // border-color: $primary_border_color;
+    border: none;
+    border-radius: 3px;
+}
+
+.rbc-month-header {
+    border-bottom: 1px solid $primary_border_color;
+    background: #f4fcff;
+}
+
+.rbc-month-view .rbc-header {
+    padding: 15px 0;
+    background: $light_blue_color;
+    border: none;
+    // border-bottom: 1px solid $primary_border_color;
+    color: $primary_color;
+}
+
+.rbc-month-view .rbc-header + .rbc-header {
+    // border-left: 1px solid $primary_border_color;
+    border: none;
+}
+
+// Day boxes
+.rbc-day-bg + .rbc-day-bg {
+    border-left: 1px solid $primary_border_color;
+}
+
+.rbc-month-row {
+    background: #fff;
+}
+
+.rbc-month-row + .rbc-month-row {
+    border-top: 1px solid $primary_border_color;
+}
+
+.rbc-off-range {
+    color: #c1c0c0;
+}
+
+.rbc-off-range-bg {
+    background: #fff;
+}
+
+.rbc-today {
+    background-color: $light_blue_color;
+}
+
+// Week
+.rbc-time-view {
+    background: #fff;
+    border: none;
+}
+
+.rbc-time-content > * + * > * {
+    border-left: 1px solid #e0f2f9;
+}
+
+.rbc-timeslot-group {
+    border-bottom: 1px solid #e0f2f9;
+}
+
+.rbc-time-view .rbc-header {
+    background: #f4fcff;
+    border-left: none;
+    padding: 15px 0;
+}
+
+.rbc-time-header > .rbc-row:first-child {
+    border-bottom: 1px solid #e0f2f9;
+}
+
+.rbc-header-gutter.rbc-label {
+    background: #f4fcff;
+}
+
+.rbc-time-view .rbc-allday-cell {
+    border-left: 1px solid #e0f2f9;
+}
+
+.rbc-time-content {
+    border-top: 2px solid #e0f2f9;
+}
+
+.rbc-day-slot .rbc-time-slot {
+    border: none;
+}
+
+.rbc-label {
+    width: 95px !important;
+    padding: 10px 5px 0 10px;
+}
+
+// Event
+.rbc-event {
+    background-color: $primary_color;
+    border-radius: 3px;
+}

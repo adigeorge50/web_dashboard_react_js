@@ -1,0 +1,69 @@
+@import "../commons";
+
+div.template-preview {
+    position: relative;
+    display: table;
+    height: 365px;
+    max-width: 280px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+
+    img {
+        height: 365px;
+        max-width: 280px;
+    }
+}
+
+div.file-upload-button {
+    position: relative;
+
+    &:hover {
+        .ui.primary.button, .ui.primary.buttons .button {
+            background-color: $primary_hover_color;
+        }
+    }
+
+    input {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &[disabled] {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.ui.steps .step {
+    padding: 20px 0;
+}
+
+
+// Step #3
+#dragndrop {
+    .ant-collapse-content {
+        padding: 0 3px;
+        overflow: visible;
+    }
+
+    .ant-collapse-content > .ant-collapse-content-box {
+        padding-top: 3px;
+        padding-bottom: 0px;
+
+        div.tile {
+            width: 100%;
+        }
+    }
+    .editable-text-area {
+      -webkit-touch-callout: text !important;
+      -webkit-user-select: text !important;
+      -khtml-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+      user-select: text !important;
+    }
+}

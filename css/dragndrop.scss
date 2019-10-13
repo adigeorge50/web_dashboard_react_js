@@ -1,0 +1,227 @@
+.resize-drag {
+    background-color: #29e;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 20px;
+
+    width: 120px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
+
+.resize-wrapper {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+div#dragndrop {
+    position: relative;
+
+    * {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+    }
+}
+
+.resize-container {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+
+    img.bg {
+        width: 100%;
+    }
+
+    div#drag-help {
+        position: absolute;
+        top: 40px;
+        left: 85px;
+        width: 400px;
+        height: 100px;
+        z-index: 10000;
+        background-repeat: no-repeat;
+        background-image: url('../img/drag-help-arrow.gif');
+    }
+}
+
+.resize-content {
+    position: relative;
+    width: 100%;
+    transform-origin: 0% 0% 0px;
+    transition: width .2s ease-out;
+
+    .tile {
+        position: absolute;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
+
+.tile-wrapper {
+    position: relative;
+    width: 195.2px;
+    height: 38px;
+    margin-bottom: 3px;
+}
+
+.drag, .tile {
+    width: 250px;
+    border: 1px solid #c7ebf3;
+    height: 38px;
+    background-color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    overflow: hidden;
+    padding-top: 1px;
+    transition: none;
+
+    &:hover {
+        border-color: #6FCCE0;
+        transition: none;
+    }
+
+    img {
+        width: 33px;
+        height: 33px;
+    }
+
+    span {
+        vertical-align: middle;
+        margin-left: 2px;
+    }
+
+    button {
+        position: absolute;
+        z-index: 1;
+        top: 2px;
+        right: 2px;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
+        visibility: hidden;
+        opacity: 0;
+        transition: .1s all ease-out;
+    }
+}
+
+.tile-abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.thumbnail-on {
+    position: relative;
+    transition: all 0.2s ease-out;
+    
+    &:after {
+        content: "";
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        width: 8px;
+        height: 8px;
+        background: url('../img/resizer.png') no-repeat;
+        background-size: 8px 8px;
+    }
+
+    button {
+        visibility: visible;
+        transition: .1s all ease-out;
+    }
+
+    &:hover {
+        button {
+            opacity: 1;
+            transition: .1s all ease-out;
+        }
+    }
+}
+
+div.form-preview {
+    position: relative;
+    transition: width .2s ease-out;
+
+    img.bg {
+        width: 100%;
+    }
+
+    div.tile {
+        position: absolute;
+        transition: all .2s ease-out;
+    }
+}
+
+div.drag-controls {
+    position: relative;
+
+    div.zoom {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        button {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            line-height: 0px;
+            font-size: 15px;
+
+            &.minus {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// Custom fields
+div.thumbnail-on {
+    textarea {
+        width: calc(100% - 33px);
+        height: 100%;
+        border: none;
+        resize: none;
+
+        // &::-webkit-scrollbar {
+        //     width: 0px;
+        //     background: transparent;
+        // }
+
+        &:hover, &:focus {
+            border-color: transparent;
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+// Preview
+.preview-field {
+    position: absolute;
+    display: inline-block;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 3px;
+    transition: all 0.2s ease-out;
+}
+
+.preview-field-text {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: left;
+    font-weight: bold;
+}
